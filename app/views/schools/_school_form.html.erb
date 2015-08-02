@@ -1,0 +1,28 @@
+<% if @school.errors.present? %>
+	<% @school.errors.full_messages.each do |msg| %>
+		<p><%= msg %></p>
+	<% end %>
+<% end %>
+
+<%= form_for @school do |f| %>
+<p>
+	<%= f.label :school_name %><br>
+	<%= f.text_field :school_name %>
+</p>
+<p>
+	<%= f.label :location %><br>
+	<%= f.text_field :location%>
+</p>
+<p>
+	<%= f.label :needs %><br>
+	<%= f.text_field :needs %>
+</p>
+<p>
+	<%= f.label :students_age %><br>
+	<%= f.text_field :students_age %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
