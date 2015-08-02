@@ -1,9 +1,12 @@
 <p>School Name: <%= @school.school_name %></p>
 <p>Location: <%= @school.location %></p>
-<p>Needs: <%= @proposal.needs %></p>
+<p>Needs: <%= @school.needs %></p>
 <p>Students' Age: <%= @school.students_age %></p>
+<p><%= link_to 'Back', schools_path %></p>
 
-<p><%= link_to 'Back', schools_path %> |
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?" %>
+<% if current_user == @school.user %>
+<p>
+	<%= link_to 'Edit', edit_school_path(@school) %> |
+	<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?" %>
 </p>
+<% end %>

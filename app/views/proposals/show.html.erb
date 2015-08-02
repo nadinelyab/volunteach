@@ -5,7 +5,7 @@
 <p>Target Age: <%= @proposal.target_age %></p>
 <p>Languages: <%= @proposal.language %></p>
 <p>Description: <%= @proposal.description %></p>
-<%= link_to 'See All Proposals', proposals_path %>
+<%= link_to 'Back', proposals_path %>
 <% if current_user == @proposal.user %>
 	|
 	<%= link_to 'Edit', edit_proposal_path(@proposal) %>
