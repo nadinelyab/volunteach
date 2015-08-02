@@ -1,0 +1,36 @@
+<% if @proposal.errors.present? %>
+	<% @proposal.errors.full_messages.each do |msg| %>
+		<p><%= msg %></p>
+	<% end %>
+<% end %>
+
+<%= form_for @proposal do |f| %>
+<p>
+	<%= f.label :teacher_name %>
+	<%= f.text_field :teacher_name %>
+</p>
+<p>
+	<%= f.label :location %>
+	<%= f.text_field :teacher_location%>
+</p>
+<p>
+	<%= f.label :topic %>
+	<%= f.text_field :topic %>
+</p>
+<p>
+	<%= f.label :class_duration %>
+	<%= f.text_field :duration %>
+</p>
+<p>
+	<%= f.label :target_age %>
+	<%= f.text_field :target_age %>
+</p>
+<p>
+	<%= f.label :languages %>
+	<%= f.text_field :language %>
+</p>
+<p>
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+</p>
+<% end %>
