@@ -155,7 +155,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: asset-url(books_apple_hires.JPG) no-repeat center center scroll;
+    background-image: url('http://i.imgur.com/J0KjkAR.jpg') 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
