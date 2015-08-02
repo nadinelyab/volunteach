@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801201506) do
+ActiveRecord::Schema.define(version: 20150802135857) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "proposals", force: :cascade do |t|
+    t.string   "teacher_name"
+    t.string   "teacher_location"
+    t.string   "topic"
+    t.string   "duration"
+    t.string   "target_age"
+    t.string   "language"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+  end
+
+  add_index "proposals", ["user_id"], name: "index_proposals_on_user_id", using: :btree
+
+  create_table "proposals_schools", id: false, force: :cascade do |t|
+    t.integer "proposal_id", null: false
+    t.integer "school_id",   null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "school_name"
+    t.string   "location"
+    t.string   "needs"
+    t.string   "students_age"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+  end
+
+  add_index "schools", ["user_id"], name: "index_schools_on_user_id", using: :btree
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +63,13 @@ ActiveRecord::Schema.define(version: 20150801201506) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.string   "type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "proposals", "users"
+  add_foreign_key "schools", "users"
 end

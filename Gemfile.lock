@@ -182,6 +182,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  orm_adapter
   pg
   puma
   rails (= 4.2.2)
