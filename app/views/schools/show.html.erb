@@ -5,11 +5,11 @@
 	<p>Students' Age: <%= @school.students_age %></p><hr>
 
 	<h3>Classes previously taught at this school:</h3>
-	<% if @school.proposals == [] %>
+	<% if @proposals == [] %>
 		<p>No classes have been taught at this school yet.</p>
 	<% else %>
-		<% @school.proposals.each do |proposal| %>
-		<% render 'proposal_show', proposal: proposal %>
+		<% @proposals.each do |proposal| %>
+		<%= render 'proposals/proposal_show', proposal: proposal %>
 		<% end %>
 	<% end %>
 

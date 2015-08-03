@@ -16,7 +16,7 @@ school_user = User.create! username: "school", email: "school@user.com", passwor
 proposal = Proposal.create! topic: "math", duration: "1 hour", target_age: "12", language: "Spanish", user: volunteer,
 description: "A fun introduction to fractals!"
 
-school = School.create! needs: "Spanish Teacher", students_age: "15-18", user: school_user
+school = School.create! school_name: "South Anchorage High School", location: "Anchorage", needs: "Spanish Teacher", students_age: "15-18", user: school_user
 
 proposal.schools << school
 proposal.save
