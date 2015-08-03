@@ -6,22 +6,5 @@
 
 
 		<% @schools.each do |school| %>
-			<div class=".col-md-6">
-				<div class="panel panel-default">
-				<div class="panel body">
-					<div class="container">
-					<h4><%= link_to school.school_name, school_path(school)%></h4>
-					<p>Location: <%= school.location %></p>
-					<p>Needs: <%= school.needs %></p>
-					<p>Student Age: <%= school.students_age %></p>
-
-					<% if current_user == school.user %>
-					<p class="list-group-item-text"><%= link_to 'Edit', edit_school_path(school) %> |
-					<%= link_to 'Delete', school_path(school), method: :delete, data: { confirm: "Are you sure?"} %>
-					</p>
-					</div>
-					<% end %>
-				<% end %>
-			</div>
-	</div>
-</div>
+			<%= render 'schools/school_show', school: school %>
+		<% end %>

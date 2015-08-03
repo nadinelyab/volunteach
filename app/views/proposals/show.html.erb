@@ -12,9 +12,7 @@
 		<p>This class has not been taught at any schools yet.</p>
 	<% else %> 
 		<% @proposal.schools.each do |school| %>
-			<h4><%= school.school_name %></h4>
-			<p>Student Age: <%= school.students_age %></p>
-			<p><%= link_to 'See School', school_path(school) %></p> 
+			<%= render 'schools/school_show', school: school %>
 		<% end %>
 	<% end %>
 
