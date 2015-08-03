@@ -1,10 +1,10 @@
 <div class="container">
-	<h3><%= @school.school_name %></h3>
+	<h2><%= @school.school_name %></h2>
 	<p>Location: <%= @school.location %></p>
 	<p>Needs: <%= @school.needs %></p>
-	<p>Students' Age: <%= @school.students_age %></p>
+	<p>Students' Age: <%= @school.students_age %></p><hr>
 
-	<h4>Classes previously taught at this school:</h4>
+	<h3>Classes previously taught at this school:</h3>
 	<% if @school.proposals == [] %>
 		<p>No classes have been taught at this school yet.</p>
 	<% else %>

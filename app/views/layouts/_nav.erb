@@ -16,7 +16,6 @@
         <% if user_signed_in? %>
           <li><%= link_to 'Proposals', proposals_path %></li>
           <li><%= link_to 'Schools', schools_path %></li>
-          <li>Logged in as <strong><%= current_user.email %></strong>.</li>
         <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">

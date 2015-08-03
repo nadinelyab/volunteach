@@ -1,13 +1,12 @@
 <div class="container">
-
-	<h3><%= link_to @proposal.user.name, user_path(@proposal.user) %></h3>
+	<h2><%= link_to @proposal.user.name, user_path(@proposal.user) %></h2>
 	<p>Location: <%= @proposal.user.location %></p>
 	<p>Topic: <%= @proposal.topic %></p>
 	<p>Class Duration: <%= @proposal.duration %></p>
 	<p>Target Age: <%= @proposal.target_age %></p>
 	<p>Languages: <%= @proposal.language %></p>
-	<p>Description: <%= @proposal.description %></p>
-	
+	<p>Description: <%= @proposal.description %></p><hr>
+
 	<h3>Schools where this class has been taught:</h3>
 	<% if @proposal.schools == [] %>
 		<p>This class has not been taught at any schools yet.</p>

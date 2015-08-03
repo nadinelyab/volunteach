@@ -1,8 +1,9 @@
 <div class='container'>
 	<div class='row'>
+		<span style="float: right; margin-top: 20px;"><%= link_to 'Add a New Proposal', new_proposal_path, class: "btn btn-default" %></span>
 
 		<h1>Class Proposals</h1>
-			<p><%= link_to 'Add a New Proposal', new_proposal_path, class: "btn btn-default" %></p></div>
+			</div>
 
 	<div class="row">
 		<% @proposals.each do |proposal| %>
