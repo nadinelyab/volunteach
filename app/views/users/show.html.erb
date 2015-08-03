@@ -1,12 +1,18 @@
 <div class="container">
 	<div class="row">
-		<h1><%= @user.username %> | <% @proposals.each do |proposal| %>
-			<%= proposal.teacher_location %>
-		<% end %></h1><hr>
+
+		<% if @user.category == "volunteer" %>
+			<h1><%= @user.username %> | <% @proposals.each do |proposal| %>
+				<%= proposal.teacher_location %>
+			<% end %></h1><hr>
 
 
-		<h2>Class Proposals</h2>
-			<%= render 'proposals/proposal_show' %>
+			<h2>Class Proposals</h2>
+				<%= render 'proposals/proposal_show' %>
+
+			<h2>Schools Taught At</h2>
+		<% end %>
+		
 
 
 

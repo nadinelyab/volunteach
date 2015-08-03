@@ -1,13 +1,13 @@
 <div class="container">
 
-	<h3><%= @proposal.teacher_name %></h3>
+	<h2><%= @proposal.teacher_name %></h2>
 	<p>Location: <%= @proposal.teacher_location %></p>
 	<p>Topic: <%= @proposal.topic %></p>
 	<p>Class Duration: <%= @proposal.duration %></p>
 	<p>Target Age: <%= @proposal.target_age %></p>
 	<p>Languages: <%= @proposal.language %></p>
-	<p>Description: <%= @proposal.description %></p>
-	
+	<p>Description: <%= @proposal.description %></p><hr>
+
 	<h3>Schools where this class has been taught:</h3>
 	<% if @proposal.schools == [] %>
 		<p>This class has not been taught at any schools yet.</p>
