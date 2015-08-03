@@ -18,6 +18,6 @@ description: "A fun introduction to fractals!"
 
 school = School.create! needs: "Spanish Teacher", students_age: "15-18", user: school_user
 
-# proposal.schools = school
-# proposal.save
+proposal.schools << school
+proposal.save
 
