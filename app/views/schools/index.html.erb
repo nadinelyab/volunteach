@@ -3,6 +3,7 @@
 
 <span style="float: right; margin-top: 20px;"><%= link_to 'Add a New School', new_school_path, class: "btn btn-default" %></span>
 <h1>Schools in Need</h1>
+	<%= render 'school_search' %>
 
 
 		<% @schools.each do |school| %>
