@@ -13,11 +13,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.</li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Proposals', proposals_path %></li>
+          <li><%= link_to 'Schools', schools_path %></li>
+          <li>Logged in as <strong><%= current_user.email %></strong>.</li>
         <% end %>
-          </ul>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

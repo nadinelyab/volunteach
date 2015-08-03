@@ -3,6 +3,18 @@
 	<p>Location: <%= @school.location %></p>
 	<p>Needs: <%= @school.needs %></p>
 	<p>Students' Age: <%= @school.students_age %></p>
+
+	<h4>Classes previously taught at this school:</h4>
+	<% if @school.proposals == [] %>
+		<p>No classes have been taught at this school yet.</p>
+	<% else %>
+		<% @school.proposals.each do |proposal| %>
+			<h5>Topic: <%= proposal.topic %></h5>
+			<p>Description: <%= proposal.description %></p>
+			<p><%= link_to 'Show Proposal', proposal_path(proposal) %></p>
+		<% end %>
+	<% end %>
+
 	<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
 
 	<% if current_user == @school.user %>
