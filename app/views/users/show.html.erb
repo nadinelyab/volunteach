@@ -6,9 +6,11 @@
 				<%= proposal.teacher_location %>
 			<% end %></h1><hr>
 		<h2>Class Proposals</h2>
-		<% @proposals.each do |proposal| %>
-			<%= render 'proposals/proposal_show', proposal: proposal %>
+			<% @proposals.each do |proposal| %>
+				<%= render 'proposals/proposal_show', proposal: proposal %>
+			<% end %>
 		<% end %>
+
 
 
 

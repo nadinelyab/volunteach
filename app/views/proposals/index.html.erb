@@ -6,8 +6,9 @@
 			</div>
 
 	<div class="row">
-
-		<%= render 'proposal_show' %>
+		<% @proposals.each do |proposal| %>
+			<%= render 'proposal_show', proposal: proposal %>
+		<% end %>
 
 	</div>
 </div>
