@@ -2,9 +2,7 @@
 	<div class="row">
 
 		<% if @user.category == "volunteer" %>
-			<h1><%= @user.username %> | <% @proposals.each do |proposal| %>
-				<%= proposal.teacher_location %>
-			<% end %></h1><hr>
+			<h1><%= @user.username %> | <%= @user.location %></h1><hr>
 		<h2>Class Proposals</h2>
 			<% @proposals.each do |proposal| %>
 				<%= render 'proposals/proposal_show', proposal: proposal %>
