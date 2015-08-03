@@ -6,7 +6,9 @@
 
 
 		<h2>Class Proposals</h2>
-			<%= render 'proposals/proposal_show' %>
+		<% @proposals.each do |proposal| %>
+			<%= render 'proposals/proposal_show', proposal: proposal %>
+		<% end %>
 
 
 

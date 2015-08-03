@@ -5,13 +5,25 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div><br>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
+
+    <div class="field">
+      <%= f.label :location %><br />
+      <%= f.text_field :location, autofocus: true %>
+      </div><br>
+
+    <div class="field">
+      <p><%= f.radio_button :category, 'school' %>
+      <%= label :category_school, 'School' %> </p>
+      <p><%= f.radio_button :category, 'volunteer' %>
+      <%= label :category_volunteer, 'Volunteer' %></p>
+    </div><br>
 
     <div class="field">
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />

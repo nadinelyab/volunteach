@@ -1,7 +1,7 @@
 <div class="container">
 
-	<h3><%= @proposal.teacher_name %></h3>
-	<p>Location: <%= @proposal.teacher_location %></p>
+	<h3><%= link_to proposal.user.name, user_path(proposal.user) %></h3>
+	<p>Location: <%= @proposal.user.location %></p>
 	<p>Topic: <%= @proposal.topic %></p>
 	<p>Class Duration: <%= @proposal.duration %></p>
 	<p>Target Age: <%= @proposal.target_age %></p>
