@@ -9,9 +9,7 @@
 		<p>No classes have been taught at this school yet.</p>
 	<% else %>
 		<% @school.proposals.each do |proposal| %>
-			<h5>Topic: <%= proposal.topic %></h5>
-			<p>Description: <%= proposal.description %></p>
-			<p><%= link_to 'Show Proposal', proposal_path(proposal) %></p>
+		<% render 'proposal_show', proposal: proposal %>
 		<% end %>
 	<% end %>
 
