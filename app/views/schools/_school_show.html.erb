@@ -2,7 +2,7 @@
 	<div class="panel body">
 		<div class="container">
 			<span style="float: right"><%= link_to 'View', school_path(school), class: "btn btn-dark" %></span>
-			<h4><%= school.school_name %></h4>
+			<h4><%= link_to school.school_name, user_path(school.user) %></h4>
 			<p>Student Age: <%= school.students_age %></p>
 			<% if current_user == school.user %>
 				<%= link_to 'Edit', edit_school_path(school), class: "btn btn-dark" %>

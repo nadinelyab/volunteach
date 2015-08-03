@@ -32,6 +32,7 @@ gem 'twitter-bootstrap-rails'
 # font awesome
 gem "font-awesome-rails"
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

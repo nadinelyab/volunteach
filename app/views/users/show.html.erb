@@ -2,12 +2,24 @@
 	<div class="row">
 
 		<% if @user.category == "volunteer" %>
-			<h1><%= @user.username %> | <%= @user.location %></h1><hr>
-		<h2>Class Proposals</h2>
-			<% @proposals.each do |proposal| %>
-				<%= render 'proposals/proposal_show', proposal: proposal %>
-			<% end %>
+			<h1><%= @user.name %> | <%= @user.location %></h1>
+			<hr>
+			<h2>Class Proposals</h2>
+				<% @proposals.each do |proposal| %>
+					<%= render 'proposals/proposal_show', proposal: proposal %>
+				<% end %>
 		<% end %>
+
+		<% if @user.category == "school" %>
+			<h1><%= @user.name %> | <%= @user.location %></h1>
+			<hr>
+			<h2>Class Requests</h2>
+				<% @schools.each do |school| %>
+					<%= render 'schools/school_show', school: school %>
+				<% end %>
+		<% end %>
+
+		
 
 
 

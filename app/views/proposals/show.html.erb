@@ -1,11 +1,12 @@
 <div class="container">
-	<h2><%= link_to @proposal.user.name, user_path(@proposal.user) %></h2>
+	<h2><%= @proposal.topic.upcase %></h2>
+	<p>Taught by: <%= link_to @proposal.user.name, user_path(@proposal.user) %></p>
+	<p>Description: <%= @proposal.description %></p>
 	<p>Location: <%= @proposal.user.location %></p>
-	<p>Topic: <%= @proposal.topic %></p>
 	<p>Class Duration: <%= @proposal.duration %></p>
 	<p>Target Age: <%= @proposal.target_age %></p>
 	<p>Languages: <%= @proposal.language %></p>
-	<p>Description: <%= @proposal.description %></p><hr>
+	<hr>
 
 	<h3>Schools where this class has been taught:</h3>
 	<% if @proposal.schools == [] %>
