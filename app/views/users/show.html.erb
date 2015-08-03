@@ -19,6 +19,20 @@
 				<% end %>
 		<% end %>
 
+		<h1>Messages</h1>
+
+		<h2>Inbox</h2>
+		<% @messages_received.each do |message| %>
+			<%= render 'messages/inbox', message: message, out: false %>
+		<% end %>
+
+		<h2>Messages Sent</h2>
+		<% @messages_sent.each do |message| %>
+			<% render 'messages/inbox', message: message, out: true %>
+		<% end %>
+	</div>
+</div>
+
 		
 
 

@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+	<div class="panel body">
+		<div class="container">
+			<span style="float: right"><%= link_to 'View', user_message_path(message), class: "btn btn-dark" %></span>
+			<h4>To: <%= message.receiver.username %></h4>
+			<h4>From: <%= message.sender.username %></h4>
+			<p><strong><%= message.title %></strong></h5>
+		</div>
+	</div>
+</div>
