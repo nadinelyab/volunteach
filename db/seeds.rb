@@ -13,7 +13,7 @@ School.delete_all
 volunteer = User.create! username: "volunteer", email: "volunteer@user.com", password: "password", password_confirmation: "password", category: "volunteer"
 school = User.create! username: "school", email: "school@user.com", password: "password", password_confirmation: "password", category: "school"
 
-proposal = Proposal.create! teacher_name: "Nadin Ey", teacher_location: "Mexico City", topic: "math", duration: "1 hour", target_age: "12", language: "Spanish", user: volunteer,
+proposal = Proposal.create! topic: "math", duration: "1 hour", target_age: "12", language: "Spanish", user: volunteer,
 description: "A fun introduction to fractals!"
 
 school = School.create! school_name: "South Anchorage High School", location: "Anchorage", needs: "Spanish Teacher", students_age: "15-18", user: school

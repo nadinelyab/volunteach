@@ -5,8 +5,8 @@
 			<p><%= link_to 'Add a New Proposal', new_proposal_path, class: "btn btn-default" %></p></div>
 
 	<div class="row">
-
-		<%= render 'proposal_show' %>
-
+		<% @proposals.each do |proposal| %>
+			<%= render 'proposal_show', proposal: proposal %>
+		<% end %>
 	</div>
 </div>

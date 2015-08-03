@@ -1,6 +1,6 @@
 <div class="container">
 
-	<h3><%= link_to proposal.user.name, user_path(proposal.user) %></h3>
+	<h3><%= link_to @proposal.user.name, user_path(@proposal.user) %></h3>
 	<p>Location: <%= @proposal.user.location %></p>
 	<p>Topic: <%= @proposal.topic %></p>
 	<p>Class Duration: <%= @proposal.duration %></p>
