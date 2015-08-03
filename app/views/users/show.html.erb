@@ -5,21 +5,11 @@
 			<h1><%= @user.username %> | <% @proposals.each do |proposal| %>
 				<%= proposal.teacher_location %>
 			<% end %></h1><hr>
-
-<<<<<<< HEAD
-
-			<h2>Class Proposals</h2>
-				<%= render 'proposals/proposal_show' %>
-
-			<h2>Schools Taught At</h2>
-		<% end %>
-		
-=======
 		<h2>Class Proposals</h2>
 		<% @proposals.each do |proposal| %>
 			<%= render 'proposals/proposal_show', proposal: proposal %>
 		<% end %>
->>>>>>> fff640c183a2f5e43b446cda10831cd5c9efaa7e
+
 
 
 
