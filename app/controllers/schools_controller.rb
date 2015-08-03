@@ -1,13 +1,20 @@
 class SchoolsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		@schools = School.all
+		@query = params[:query]
+
+		if @query
+			@schools = School.advanced_search(@query)
+		else
+			@schools = School.all
+		end
 	end
 
 	def show
 		@school  = School.find(params[:id])
 		@proposals = @school.proposals
 	end
+		
 
 	def edit
 		@school = School.find(params[:id])
@@ -32,8 +39,7 @@ class SchoolsController < ApplicationController
 	end
 
 	def create 
-		@school = current_user.schools.build(school_params
-			)
+		@school = current_user.schools.build(school_params)
 
 		if @school.save
 			redirect_to school_path(@school)
@@ -52,5 +58,10 @@ class SchoolsController < ApplicationController
 		@school.destroy
 
 		redirect_to schools_path
+	end
+
+	private
+	def school_params
+		params.require(:school).permit(:school_name, :location, :needs, :students_age)
 	end
 end
