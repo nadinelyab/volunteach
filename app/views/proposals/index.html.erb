@@ -14,8 +14,14 @@
 		<% end %>
 
 
-		<h1>All Class Proposals</h1>
-			</div>
+<h1>All Class Proposals</h1>
+
+	<%= form_tag(proposals_path, method: "get") do %>
+	<%= label_tag(:query, "Search All Proposals:") %>
+	<%= text_field_tag :query, params[@query], placeholder: "Topic, Description, Target Age, etc." %>
+	<%= submit_tag "Search", class: "btn btn-default" %>
+<% end %><br>
+	</div>
 
 	<div class="row">
 		<% @proposals.each do |proposal| %>

@@ -1,7 +1,13 @@
 class ProposalsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		@proposals = Proposal.all
+		@query = params[:query]
+
+		if @query
+			@proposals = Proposal.advanced_search(@query)
+		else
+			@proposals = Proposal.all
+		end
 	end
 
 	def show
