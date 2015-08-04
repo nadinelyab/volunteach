@@ -8,6 +8,7 @@
 School.delete_all
 Proposal.delete_all
 User.delete_all
+Message.delete_all
 
 volunteer = User.create! username: "volunteer", email: "volunteer@user.com", password: "password", password_confirmation: "password", category: "volunteer", name: "Maria", location: "Anchorage"
 
@@ -17,6 +18,9 @@ proposal = Proposal.create! topic: "math", duration: "1 hour", target_age: "12",
 description: "A fun introduction to fractals!"
 
 school = School.create! school_name: "South Anchorage High School", location: "Anchorage", needs: "Spanish Teacher", students_age: "15-18", user: school_user
+
+Message.create! sender_id: volunteer.id, title: "Fractals class", body: "Hi! I'm a first time teacher interested in teaching a class on fractals at your school.",
+receiver_id: school_user.id, read: true
 
 proposal.schools << school
 proposal.save

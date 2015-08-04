@@ -1,4 +1,10 @@
-<h4>To: <%= @message.receiver.username %></h4>
-<h4>From: <%= @message.sender.username %></h4>
-<p><strong><%= @message.title %></strong></h5>
-<p><%= @message.body %></p>
+<div class = "container">
+	<h4>To: <%= User.find(@message.receiver_id).username %></h4>
+	<h4>From: <%= User.find(@message.sender_id).username %></h4>
+	<p><strong><%= @message.title %></strong></h5>
+	<p><%= @message.body %></p>
+
+	<h4>Reply</h4>
+	<%= render 'messages/message_form' %>
+
+</div>

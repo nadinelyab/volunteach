@@ -1,0 +1,31 @@
+<% if @new_message.errors.present? %>
+  <% @new_message.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+<% end %>
+
+<% if current_user.category == "volunteer" %>
+
+  <%= form_tag(new_user_message_path(current_user), method: "get") do %>
+    <%= label_tag(:query, "Find a school to message:") %><br>
+    <%= text_field_tag :query, params[@query], placeholder: "School Name, Location, Needs" %>
+    <%= submit_tag "Search", class: "btn btn-default" %>
+  <% end %><br>
+
+<% else %>
+
+<% end %>
+
+<%= form_for ([current_user, @new_message]) do |f| %>
+<p>
+  <%= f.label "Subject" %><br>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :message %><br>
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.submit "Send Message", class: "btn btn-dark" %>
+</p>
+<% end %>

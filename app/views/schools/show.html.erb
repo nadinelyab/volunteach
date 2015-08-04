@@ -3,6 +3,14 @@
 	<p>Location: <%= @school.location %></p>
 	<p>Needs: <%= @school.needs %></p>
 	<p>Students' Age: <%= @school.students_age %></p><hr>
+	
+	<% if current_user == @school.user %>
+	<p>
+		<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
+		<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?", class: "btn btn-dark" %>
+	</p>
+	<% end %>
+	<%= link_to 'Message This School', new_user_message_path(current_user), class: "btn btn-default" %>
 
 	<h3>Classes previously taught at this school:</h3>
 	<% if @proposals == [] %>
@@ -14,11 +22,4 @@
 	<% end %>
 
 	<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
-
-	<% if current_user == @school.user %>
-	<p>
-		<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
-		<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?", class: "btn btn-dark" %>
-	</p>
-	<% end %>
 </div>

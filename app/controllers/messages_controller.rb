@@ -1,10 +1,11 @@
 class MessagesController < ApplicationController
 	def show
 		@message  = Message.find(params[:id])
+		@new_message = Message.new
 	end
 
 	def new
-		@message = Message.new
+		@new_message = Message.new
 	end
 
 	def create 
