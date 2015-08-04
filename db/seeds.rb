@@ -17,7 +17,7 @@ school_user = User.create! username: "school", email: "school@user.com", passwor
 proposal = Proposal.create! topic: "math", duration: "1 hour", target_age: "12", language: "Spanish", user: volunteer,
 description: "A fun introduction to fractals!"
 
-school = School.create! school_name: "South Anchorage High School", location: "Anchorage", needs: "Spanish Teacher", students_age: "15-18", user: school_user
+school = School.create! school_name: "South Anchorage High School", location: "10471 Honey Bear Lane, Anchorage, Alaska", needs: "Spanish Teacher", students_age: "15-18", user: school_user
 
 Message.create! sender_id: volunteer.id, title: "Fractals class", body: "Hi! I'm a first time teacher interested in teaching a class on fractals at your school.",
 receiver_id: school_user.id, read: true
