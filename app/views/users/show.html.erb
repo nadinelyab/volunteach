@@ -38,7 +38,7 @@
 
 		<% if current_user == @user %>
 			<h1>Messages</h1>
-
+			<span style="float: right; margin-top: 10px;"><%= link_to 'Send a New Message', new_user_message_path(current_user), class: "btn btn-default" %></span>
 			<h2>Inbox</h2>
 			<% if @messages_received.empty? %>
 				<h4>You have not received any messages yet.</h4>

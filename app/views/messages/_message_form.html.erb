@@ -8,14 +8,14 @@
 
 <p>
   <%= f.label "To:" %><br>
-  <%= f.text_field :receiver_id %></p>
+  <%= f.text_field :receiver_id, value: receiver, placeholder: "Name of the user you wish to message" %></p>
 <p>
   <%= f.label "Subject" %><br>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, value: "" %>
 </p>
 <p>
   <%= f.label :message %><br>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, value: "" %>
 </p>
 <p>
   <%= f.submit "Send Message", class: "btn btn-dark" %>

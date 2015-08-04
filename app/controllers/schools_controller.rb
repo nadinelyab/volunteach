@@ -20,7 +20,6 @@ class SchoolsController < ApplicationController
 		@proposals = @school.proposals
 
 		@message = Message.new
-		@receiver = @school.user.name
 	end	
 
 	def edit
@@ -57,9 +56,6 @@ class SchoolsController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def map
 	end
 
 	def create_link

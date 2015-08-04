@@ -22,23 +22,7 @@
 		<% end %><hr>
 
 		<h4><em> Send a message to the school</em></h4>
-		<%= form_for ([current_user, @message]) do |f| %>
-
-				<p>
-				  <%= f.label "To:" %><br>
-				  <%= f.text_field :receiver_id, :value => @receiver %></p>
-				<p>
-				  <%= f.label "Subject" %><br>
-				  <%= f.text_field :title %>
-				</p>
-				<p>
-				  <%= f.label :message %><br>
-				  <%= f.text_area :body %>
-				</p>
-				<p>
-				  <%= f.submit "Send Message", class: "btn btn-dark" %>
-				</p>
-			<% end %>
+		<%= render 'messages/message_form', receiver: @school.user.name %>
 
 		<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
 
