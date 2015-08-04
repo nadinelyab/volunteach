@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *
+ *= require bootstrap
  *= require readable
  *= require stylish-portfolio
  *= require_tree .
