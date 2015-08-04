@@ -28,7 +28,7 @@
 
 		<h2>Messages Sent</h2>
 		<% @messages_sent.each do |message| %>
-			<% render 'messages/inbox', message: message, out: true %>
+			<%= render 'messages/inbox', message: message, out: true %>
 		<% end %>
 	</div>
 </div>
