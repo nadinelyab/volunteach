@@ -21,6 +21,19 @@ class ProposalsController < ApplicationController
 		end
 	end
 
+	def link_form
+		@proposal = Proposal.find(params[:id])
+		@schools = School.all
+	end
+
+	def create_link
+		@proposal = Proposal.find(params[:id])
+		@school = School.find(params[:school_id])
+		@proposal.schools << @school
+
+		redirect_to proposal_path(@proposal)
+	end
+
 	def update
 		@proposal = Proposal.find(params[:id])
 

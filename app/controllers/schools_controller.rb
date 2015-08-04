@@ -77,7 +77,6 @@ class SchoolsController < ApplicationController
 		@proposals = current_user.proposals
 	end
 
-
 	private
 	def school_params
 		params.require(:school).permit(:school_name, :location, :needs, :students_age)

@@ -22,6 +22,3 @@ school = School.create! school_name: "South Anchorage High School", location: "1
 Message.create! sender_id: volunteer.id, title: "Fractals class", body: "Hi! I'm a first time teacher interested in teaching a class on fractals at your school.",
 receiver_id: school_user.id, read: true
 
-proposal.schools << school
-proposal.save
-
