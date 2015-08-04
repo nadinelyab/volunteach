@@ -1,48 +1,50 @@
 <div class="container">
-	<h2><%= @school.school_name %></h2>
-	<p>Location: <%= @school.location %></p>
-	<p>Needs: <%= @school.needs %></p>
-	<p>Students' Age: <%= @school.students_age %></p><hr>
-	
-	<% if current_user == @school.user %>
-	<p>
-		<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
-		<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?", class: "btn btn-dark" %>
-	</p>
-	<% end %>
-
-	<h3>Classes previously taught at this school:</h3>
-	<% if @proposals == [] %>
-		<p>No classes have been taught at this school yet.</p>
-	<% else %>
-		<% @proposals.each do |proposal| %>
-		<%= render 'proposals/proposal_show', proposal: proposal %>
-		<% end %>
-	<% end %><hr>
-
-	<h4><em> Send a message to the school</em></h4>
-	<%= form_for ([current_user, @message]) do |f| %>
-
-			<p>
-			  <%= f.label "To:" %><br>
-			  <%= f.text_field :receiver_id, :value => @receiver %></p>
-			<p>
-			  <%= f.label "Subject" %><br>
-			  <%= f.text_field :title %>
-			</p>
-			<p>
-			  <%= f.label :message %><br>
-			  <%= f.text_area :body %>
-			</p>
-			<p>
-			  <%= f.submit "Send Message", class: "btn btn-dark" %>
-			</p>
+	<div class='row'>
+		<h2><%= @school.school_name %></h2>
+		<p>Location: <%= @school.location %></p>
+		<p>Needs: <%= @school.needs %></p>
+		<p>Students' Age: <%= @school.students_age %></p><hr>
+		
+		<% if current_user == @school.user %>
+		<p>
+			<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
+			<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?", class: "btn btn-dark" %>
+		</p>
 		<% end %>
 
-	<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
+		<h3>Classes previously taught at this school:</h3>
+		<% if @proposals == [] %>
+			<p>No classes have been taught at this school yet.</p>
+		<% else %>
+			<% @proposals.each do |proposal| %>
+			<%= render 'proposals/proposal_show', proposal: proposal %>
+			<% end %>
+		<% end %><hr>
 
-	<% if current_user == @school.user %>
-		<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
-		<%= link_to 'Delete', school_path(@school), method: :delete, data: {confirm: 'Are you sure you want to delete this school?'}, class: "btn btn-dark" %>
-	<% end %>
+		<h4><em> Send a message to the school</em></h4>
+		<%= form_for ([current_user, @message]) do |f| %>
+
+				<p>
+				  <%= f.label "To:" %><br>
+				  <%= f.text_field :receiver_id, :value => @receiver %></p>
+				<p>
+				  <%= f.label "Subject" %><br>
+				  <%= f.text_field :title %>
+				</p>
+				<p>
+				  <%= f.label :message %><br>
+				  <%= f.text_area :body %>
+				</p>
+				<p>
+				  <%= f.submit "Send Message", class: "btn btn-dark" %>
+				</p>
+			<% end %>
+
+		<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
+
+		<% if current_user == @school.user %>
+			<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
+			<%= link_to 'Delete', school_path(@school), method: :delete, data: {confirm: 'Are you sure you want to delete this school?'}, class: "btn btn-dark" %>
+		<% end %>
+	</div>
 </div>

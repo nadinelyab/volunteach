@@ -38,7 +38,7 @@ class ProposalsController < ApplicationController
 		@proposal = Proposal.find(params[:id])
 		@school = School.find(params[:school_id])
 		if !@proposal.schools.include?(@school)
-			@proposal.schoolss << @school
+			@proposal.schools << @school
 		end
 
 		redirect_to proposal_path(@proposal)
