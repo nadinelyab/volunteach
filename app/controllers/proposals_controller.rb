@@ -38,7 +38,7 @@ class ProposalsController < ApplicationController
 		@proposal = Proposal.find(params[:id])
 		@school = School.find(params[:school_id])
 		if !@proposal.schools.include?(@school)
-			@proposal.schoolss << @school
+			@proposal.schools << @school
 		end
 
 		redirect_to proposal_path(@proposal)
@@ -56,6 +56,12 @@ class ProposalsController < ApplicationController
 
 	def new
 		@proposal = Proposal.new
+
+		if current_user.category == "school"
+			redirect_to proposals_path, alert: "Sorry, you can't add a proposal because
+			your user is of type school. However, you can add a class to your needs by 
+			editing your school."
+		end
 	end
 
 	def create 

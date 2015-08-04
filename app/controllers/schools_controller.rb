@@ -20,7 +20,6 @@ class SchoolsController < ApplicationController
 		@proposals = @school.proposals
 
 		@message = Message.new
-		@receiver = @school.user.name
 	end	
 
 	def edit
@@ -43,6 +42,10 @@ class SchoolsController < ApplicationController
 
 	def new
 		@school = School.new
+
+		if current_user.category == "volunteer"
+			redirect_to schools_path, alert: "You can't add a school because your user is of type volunteer."
+		end
 	end
 
 	def create 
@@ -53,9 +56,6 @@ class SchoolsController < ApplicationController
 		else
 			render :new
 		end
-	end
-
-	def map
 	end
 
 	def create_link

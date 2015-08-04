@@ -6,6 +6,9 @@ class MessagesController < ApplicationController
 	def show
 		@message  = Message.find(params[:id])
 		@new_message = Message.new
+
+		@receiver = User.find(@message.receiver_id)
+		@sender = User.find(@message.sender_id)
 	end
 
 	def new
@@ -13,7 +16,6 @@ class MessagesController < ApplicationController
 	end
 
 	def create 
-
 		@message = Message.new(message_params)
 		@user = User.find_by(name: message_params[:receiver_id])
   		@message.receiver_id = @user.id

@@ -1,14 +1,40 @@
 <div class = "container">
 	<div class="panel panel-default">
 			<div class="panel panel-heading">
-				<h4>To: <%= User.find(@message.receiver_id).username %></h4>
-				<h4>From: <%= User.find(@message.sender_id).username %></h4>
+				<h4>To: <%= @receiver.name %></h4>
+				<h4>From: <%= @sender.name %></h4>
 				<p>Subject: <%= @message.title %></p>
 			</div>
 			<div class="panel panel-body">
 				<p><%= @message.body %></p>
 			</div>
 	</div>
-	<h3>Reply</h3>
-	<%= render 'messages/message_form' %>
+		<% if @receiver == current_user %>
+			<h3>Reply</h3>
+			<% if @message.errors.present? %>
+			  <% @message.errors.full_messages.each do |msg| %>
+			    <p><%= msg %></p>
+			  <% end %>
+			<% end %>
+
+			<%= form_for [current_user, @new_message], method: :post do |f| %>
+
+			<p>
+			  <%= f.label "To:" %><br>
+			  <%= f.text_field :receiver_id, value: @sender.name %></p>
+			<p>
+			  <%= f.label "Subject" %><br>
+			  <%= f.text_field :title, value: "" %>
+			</p>
+			<p>
+			  <%= f.label :message %><br>
+			  <%= f.text_area :body, value: "" %>
+			</p>
+			<p>
+			  <%= f.submit "Send Message", class: "btn btn-dark" %>
+			</p>
+			<% end %>
+		<% end %>
+
+	<%= link_to 'Back', user_path(current_user) %>
 </div>

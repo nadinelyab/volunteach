@@ -1,7 +1,8 @@
 <div class='container'>
 	<div class='row'>
-
-		<span style="float: right; margin-top: 20px;"><%= link_to 'Add a New Proposal', new_proposal_path, class: "btn btn-default" %></span>
+		<% if current_user.category == "volunteer" %>
+			<span style="float: right; margin-top: 20px;"><%= link_to 'Add a New Proposal', new_proposal_path, class: "btn btn-default" %></span>
+		<% end %>
 		<% near = User.near([current_user.latitude, current_user.longitude], 20) %>
 		<h1>Class Proposals from users near you:</h1>
 		<% if near.empty? %>
