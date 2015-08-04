@@ -12,17 +12,18 @@
 		</p>
 		<% end %>
 
-		<h3>Classes previously taught at this school:</h3>
+		<h2>Classes previously taught at this school:</h2>
 		<% if @proposals == [] %>
-			<p>No classes have been taught at this school yet.</p>
+			<h3>No classes have been taught at this school yet.</h3>
 		<% else %>
 			<% @proposals.each do |proposal| %>
 			<%= render 'proposals/proposal_show', proposal: proposal %>
 			<% end %>
 		<% end %><hr>
 
-		<h4><em> Send a message to the school</em></h4>
+		<i class="fa fa-envelope-o fa-3x"></i><br>
 		<%= render 'messages/message_form', receiver: @school.user.name %>
+		<h4><em> Send a message to request to teach at the school</em></h4>
 
 		<p><%= link_to 'Back', schools_path, class: "btn btn-dark" %></p>
 

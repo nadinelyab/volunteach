@@ -2,7 +2,7 @@
 	<div class="row">
 
 		<% if @user.category == "volunteer" %>
-			<h1><%= @user.name %> | <%= @user.location %></h1>
+			<h1><i class="fa fa-user fa-2x"></i> <%= @user.name %> | <%= @user.location %></h1>
 			<hr>
 			<h2>Class Proposals</h2>
 				<% @proposals.each do |proposal| %>
@@ -11,7 +11,7 @@
 		<% end %>
 
 		<% if @user.category == "school" %>
-			<h1><%= @user.name %> | <%= @user.location %></h1>
+			<h1><i class="fa fa-user fa-2x"></i> <%= @user.name %> | <%= @user.location %></h1>
 			<hr>
 			<h2>Schools added by this user:</h2>
 				<% @schools.each do |school| %>
@@ -39,7 +39,7 @@
 		<% if current_user == @user %>
 			<h1>Messages</h1>
 			<span style="float: right; margin-top: 10px;"><%= link_to 'Send a New Message', new_user_message_path(current_user), class: "btn btn-default" %></span>
-			<h2>Inbox</h2>
+			<h2>Inbox <i class="fa fa-inbox"></i></h2>
 			<% if @messages_received.empty? %>
 				<h4>You have not received any messages yet.</h4>
 			<% else %>
