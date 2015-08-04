@@ -55,10 +55,15 @@ class SchoolsController < ApplicationController
 		end
 	end
 
+	def map
+	end
+
 	def create_link
 		@school = School.find(params[:id])
 		@proposal = Proposal.find(params[:proposal_id])
-		@school.proposals << @proposal
+		if !@school.proposals.include?(@proposal)
+			@school.proposals << @proposal
+		end
 
 		redirect_to school_path(@school)
 	end

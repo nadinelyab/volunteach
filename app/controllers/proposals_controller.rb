@@ -1,7 +1,13 @@
 class ProposalsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		@proposals = Proposal.all
+		@query = params[:query]
+
+		if @query
+			@proposals = Proposal.advanced_search(@query)
+		else
+			@proposals = Proposal.all
+		end
 	end
 
 	def show
@@ -31,7 +37,9 @@ class ProposalsController < ApplicationController
 	def create_link
 		@proposal = Proposal.find(params[:id])
 		@school = School.find(params[:school_id])
-		@proposal.schools << @school
+		if !@proposal.schools.include?(@school)
+			@proposal.schoolss << @school
+		end
 
 		redirect_to proposal_path(@proposal)
 	end
@@ -73,8 +81,8 @@ class ProposalsController < ApplicationController
 		redirect_to proposals_path
 	end
 
-	private
+	private 
 	def proposal_params
-		params.require(:proposal).permit(:teacher_name, :teacher_location, :topic, :duration, :target_age, :language, :description)
+		params.require(:proposal).permit(:description, :topic, :duration, :target_age, :language, :user_id)
 	end
 end

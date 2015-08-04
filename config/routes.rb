@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'proposals/:id/create_link/:school_id' => 'proposals#create_link', as: :proposal_create_link
 
+  get 'school/map' => 'schools#map'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
