@@ -52,6 +52,9 @@ class SchoolsController < ApplicationController
 		end
 	end
 
+	def map
+	end
+
 	def create_link
 		@school = School.find(params[:id])
 		@proposal = Proposal.find(params[:proposal_id])

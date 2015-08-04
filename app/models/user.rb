@@ -7,5 +7,7 @@ class User < ActiveRecord::Base
   has_many :proposals, :dependent => :delete_all
   has_many :schools, :dependent => :delete_all
   has_many :messages
-  
+
+  geocoded_by :location
+  after_validation :geocode
 end

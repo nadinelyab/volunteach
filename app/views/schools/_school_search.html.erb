@@ -1,5 +1,5 @@
 <%= form_tag(schools_path, method: "get") do %>
-  <%= label_tag(:query, "Search Schools:") %>
+  <%= label_tag(:query, "Search All Schools:") %>
   <%= text_field_tag :query, params[@query], placeholder: "Name, Location, Need" %>
   <%= submit_tag "Search", class: "btn btn-default" %>
 <% end %><br>

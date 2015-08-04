@@ -72,4 +72,9 @@ class ProposalsController < ApplicationController
 
 		redirect_to proposals_path
 	end
+
+	private 
+	def proposal_params
+		params.require(:proposal).permit(:description, :topic, :duration, :target_age, :language, :user_id)
+	end
 end
