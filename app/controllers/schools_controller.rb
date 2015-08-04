@@ -10,6 +10,11 @@ class SchoolsController < ApplicationController
 		end
 	end
 
+	def search
+		@query = params[:query]
+		@schools = School.advanced_search(@query)
+	end
+
 	def show
 		@school  = School.find(params[:id])
 		@proposals = @school.proposals
