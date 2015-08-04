@@ -29,6 +29,9 @@ gem 'devise'
 # bootstrap
 gem 'twitter-bootstrap-rails'
 
+# bootstrap glyphicons
+gem 'bootstrap-glyphicons'
+
 # font awesome
 gem "font-awesome-rails"
 

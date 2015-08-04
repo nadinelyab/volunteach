@@ -18,7 +18,24 @@
 	<% end %><hr>
 
 	<h4><em> Send a message to the volunteer</em></h4>
-	<p><%= link_to 'Book this Class', new_user_message_path(current_user), class: "btn btn-default btn-lg" %></p>
+		<%= form_for ([current_user, @message]) do |f| %>
+
+			<p>
+			  <%= f.label "To:" %><br>
+			  <%= f.text_field :receiver_id, :value => @receiver %></p>
+			<p>
+			  <%= f.label "Subject" %><br>
+			  <%= f.text_field :title %>
+			</p>
+			<p>
+			  <%= f.label :message %><br>
+			  <%= f.text_area :body %>
+			</p>
+			<p>
+			  <%= f.submit "Send Message", class: "btn btn-dark" %>
+			</p>
+		<% end %>
+
 	
 
 	<%= link_to 'Back', proposals_path, class: "btn btn-dark" %>

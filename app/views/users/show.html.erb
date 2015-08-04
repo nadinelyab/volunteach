@@ -13,11 +13,12 @@
 		<% if @user.category == "school" %>
 			<h1><%= @user.name %> | <%= @user.location %></h1>
 			<hr>
-			<h2>Schools:</h2>
+			<h2>Schools</h2>
 				<% @schools.each do |school| %>
 					<%= render 'schools/school_show', school: school %>
 				<% end %>
 		<% end %>
+
 		<% if current_user == @user %>
 			<h1>Messages</h1>
 

@@ -6,6 +6,8 @@ class ProposalsController < ApplicationController
 
 	def show
 		@proposal  = Proposal.find(params[:id])
+		@message = Message.new
+		@receiver = @proposal.user.name
 	end
 
 	def search
@@ -69,5 +71,10 @@ class ProposalsController < ApplicationController
 		@proposal.destroy
 
 		redirect_to proposals_path
+	end
+
+	private
+	def proposal_params
+		params.require(:proposal).permit(:teacher_name, :teacher_location, :topic, :duration, :target_age, :language, :description)
 	end
 end
