@@ -35,7 +35,7 @@ gem "font-awesome-rails"
 # search
 gem 'textacular'
 
-# geocoder
+#gem for geocoder
 gem 'geocoder'
 
 
