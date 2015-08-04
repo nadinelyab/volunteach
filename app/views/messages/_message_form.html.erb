@@ -7,7 +7,7 @@
 <%= form_for ([current_user, @new_message]) do |f| %>
 <p>
   <%= f.label "To:" %><br>
-  <%= f.text_field :receiver, text_holder: "School Name" %>
+  <%= f.text_field :receiver_id, text_holder: "School Name" %>
 <p>
   <%= f.label "Subject" %><br>
   <%= f.text_field :title %>

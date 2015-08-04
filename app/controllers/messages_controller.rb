@@ -9,8 +9,9 @@ class MessagesController < ApplicationController
 	end
 
 	def create 
-		@message = current_user.messages.build(message_params
-			)
+		@message = Message.new(message_params)
+
+		@message.sender_id = current_user
 
 		if @message.save
 			redirect_to user_message_path(@message)
@@ -29,5 +30,10 @@ class MessagesController < ApplicationController
 		@message.destroy
 
 		redirect_to user_messages_path
+	end
+
+	private
+	def message_params
+		params.require(:message).permit(:sender_id, :receiver_id, :body, :text)
 	end
 end
