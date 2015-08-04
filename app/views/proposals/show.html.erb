@@ -8,14 +8,18 @@
 	<p>Languages: <%= @proposal.language %></p>
 	<hr>
 
-	<h3>Schools where this class has been taught:</h3>
+	<h3>Schools where this class has been taught</h3>
 	<% if @proposal.schools == [] %>
 		<p>This class has not been taught at any schools yet.</p>
 	<% else %> 
 		<% @proposal.schools.each do |school| %>
 			<%= render 'schools/school_show', school: school %>
 		<% end %>
-	<% end %>
+	<% end %><hr>
+
+	<h4><em> Send a message to the volunteer</em></h4>
+	<p><%= link_to 'Book this Class', new_user_message_path(current_user), class: "btn btn-default btn-lg" %></p>
+	
 
 	<%= link_to 'Back', proposals_path, class: "btn btn-dark" %>
 	<% if current_user == @proposal.user %>
