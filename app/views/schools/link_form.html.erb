@@ -1,0 +1,11 @@
+<div class= "container">
+	<h1>Select the class which you taught at <%= @school.school_name %>:</h1>
+	
+	<% @proposals.each do |proposal| %>
+		<h3><%= proposal.topic %></h3>
+		<p><%= proposal.description %><p>
+		<%= link_to 'Select this class', school_create_link_path(@school, proposal), class: "btn btn-default" %>
+	<% end %>
+
+</div>
+

@@ -5,6 +5,7 @@
 <% end %>
 
 <%= form_for ([current_user, @message]) do |f| %>
+
 <p>
   <%= f.label "To:" %><br>
   <%= f.text_field :receiver_id %></p>

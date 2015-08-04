@@ -9,6 +9,14 @@ Rails.application.routes.draw do
 
   resources :schools
 
+  get 'schools/:id/link_form' => 'schools#link_form', as: :school_link_form
+
+  get 'schools/:id/create_link/:proposal_id' => 'schools#create_link', as: :school_create_link
+
+  get 'proposals/:id/link_form' => 'proposals#link_form', as: :proposal_link_form
+
+  get 'proposals/:id/create_link/:school_id' => 'proposals#create_link', as: :proposal_create_link
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

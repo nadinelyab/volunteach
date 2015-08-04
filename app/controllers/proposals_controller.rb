@@ -8,12 +8,30 @@ class ProposalsController < ApplicationController
 		@proposal  = Proposal.find(params[:id])
 	end
 
+	def search
+		@query = params[:query]
+		@proposals = Proposal.advanced_search(@query)
+	end
+
 	def edit
 		@proposal = Proposal.find(params[:id])
 
 		if(current_user != @proposal.user)
 			redirect_to proposal_path(@proposal), alert:"You can't edit this proposal."
 		end
+	end
+
+	def link_form
+		@proposal = Proposal.find(params[:id])
+		@schools = School.all
+	end
+
+	def create_link
+		@proposal = Proposal.find(params[:id])
+		@school = School.find(params[:school_id])
+		@proposal.schools << @school
+
+		redirect_to proposal_path(@proposal)
 	end
 
 	def update

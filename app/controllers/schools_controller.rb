@@ -18,8 +18,7 @@ class SchoolsController < ApplicationController
 	def show
 		@school  = School.find(params[:id])
 		@proposals = @school.proposals
-	end
-		
+	end	
 
 	def edit
 		@school = School.find(params[:id])
@@ -53,6 +52,14 @@ class SchoolsController < ApplicationController
 		end
 	end
 
+	def create_link
+		@school = School.find(params[:id])
+		@proposal = Proposal.find(params[:proposal_id])
+		@school.proposals << @proposal
+
+		redirect_to school_path(@school)
+	end
+
 	def destroy
 		@school = School.find(params[:id])
 
@@ -63,6 +70,11 @@ class SchoolsController < ApplicationController
 		@school.destroy
 
 		redirect_to schools_path
+	end
+
+	def link_form
+		@school = School.find(params[:id])
+		@proposals = current_user.proposals
 	end
 
 	private
