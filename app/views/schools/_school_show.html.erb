@@ -2,7 +2,7 @@
 	<div class="panel body">
 		<div class="container">
 			<span style="float: right">
-			<%= link_to 'I Taught At this School', schools_path, class: "btn btn-dark" %> <%= link_to 'View', school_path(school), class: "btn btn-dark" %></span>
+			<%= link_to 'I Taught At this School', school_link_form_path(school), class: "btn btn-dark" %> <%= link_to 'View', school_path(school), class: "btn btn-dark" %></span>
 			<h4><%= link_to school.school_name, user_path(school.user) %></h4>
 			<p>Student Age: <%= school.students_age %></p>
 			<% if current_user == school.user %>
@@ -13,9 +13,3 @@
 		</div>
 	</div>
 </div>
-<script>
-	$(document).ready
-	$(".btn-dark").on("click", function(){
-		$(this).addClass(".darker")
-	})
-</script>

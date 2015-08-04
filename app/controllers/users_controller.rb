@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
-		@proposals = Proposal.where(user: @user)
+		@proposals = current_user.proposals
 		@schools = School.where(user: @user)
 		@messages_received = Message.where(receiver_id: @user)
 		@messages_sent = Message.where(sender_id: @user)

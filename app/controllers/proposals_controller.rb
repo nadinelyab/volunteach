@@ -8,6 +8,11 @@ class ProposalsController < ApplicationController
 		@proposal  = Proposal.find(params[:id])
 	end
 
+	def search
+		@query = params[:query]
+		@proposals = Proposal.advanced_search(@query)
+	end
+
 	def edit
 		@proposal = Proposal.find(params[:id])
 
