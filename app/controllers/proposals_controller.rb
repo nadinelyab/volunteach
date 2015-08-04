@@ -29,7 +29,9 @@ class ProposalsController < ApplicationController
 	def create_link
 		@proposal = Proposal.find(params[:id])
 		@school = School.find(params[:school_id])
-		@proposal.schools << @school
+		if !@proposal.schools.include?(@school)
+			@proposal.schoolss << @school
+		end
 
 		redirect_to proposal_path(@proposal)
 	end
