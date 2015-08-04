@@ -3,7 +3,11 @@
 		<div class="container">
 			<h4 style = "display: inline-block"><%= school.school_name %></h4>
 			<span style="float: right">
-			<%= link_to 'I Taught At this School', school_link_form_path(school), class: "btn btn-dark" %> <%= link_to 'View', school_path(school), class: "btn btn-dark" %></span>
+				<% if current_user.category == "volunteer" %>
+					<%= link_to 'I Taught At this School', school_link_form_path(school), class: "btn btn-dark" %> 
+				<%end %>
+					<%= link_to 'View', school_path(school), class: "btn btn-dark" %>
+			</span>
 			</h4>
 			<p>Location: <%= school.location %></p>
 			<p>Added by <%= link_to school.user.name, user_path(school.user) %></p>

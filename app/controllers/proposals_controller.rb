@@ -56,6 +56,12 @@ class ProposalsController < ApplicationController
 
 	def new
 		@proposal = Proposal.new
+
+		if current_user.category == "school"
+			redirect_to proposals_path, alert: "Sorry, you can't add a proposal because
+			your user is of type school. However, you can add a class to your needs by 
+			editing your school."
+		end
 	end
 
 	def create 

@@ -43,6 +43,10 @@ class SchoolsController < ApplicationController
 
 	def new
 		@school = School.new
+
+		if current_user.category == "volunteer"
+			redirect_to schools_path, alert: "You can't add a school because your user is of type volunteer."
+		end
 	end
 
 	def create 

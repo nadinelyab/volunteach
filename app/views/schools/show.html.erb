@@ -2,7 +2,7 @@
 	<div class='row'>
 		<h2><%= @school.school_name %></h2>
 		<p>Location: <%= @school.location %></p>
-		<p>Needs: <%= @school.needs %></p>
+		<p><strong>Needs: <%= @school.needs %></strong></p>
 		<p>Students' Age: <%= @school.students_age %></p><hr>
 		
 		<% if current_user == @school.user %>
