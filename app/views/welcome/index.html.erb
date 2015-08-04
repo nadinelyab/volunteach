@@ -1,6 +1,56 @@
 <header id="top" class="header">
-	<div class="text-vertical-center">
-		<h1>VolunTeach</h1>
-		<h3 style="font-family: 'Indie Flower'; text-align: block">Education is the most powerful weapon which you can use to change the world <br> -Nelson Mandela</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" style="height: 20px">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="text-vertical-center">
+					<img src="http://i.imgur.com/vQLPLWf.png?1">
+					
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-offset-2">
+				<h3 style="font-size: 28px; text-align: left; font-family: 'Montserrat', sans-serif;">Education is the most powerful weapon which you can use to change the world <br> -Nelson Mandela</h3>
+			</div>
+		</div>
 	</div>
 </header>
+
+<div class="container">
+		<div class="row", style="text-align: center">
+			<div class="col-md-4">
+					<h1 style="text-align: center">
+						<span class="fa-stack fa-lg">
+						  <i class="fa fa-circle fa-stack-2x"></i>
+						  <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+						  </span>
+						 <br>Teachers<br></h1><%= link_to 'Teach a Class', new_user_registration_path, class: "btn btn-danger btn-lg" %></h1><br>
+						 	<h3>Share your abilities with schools in rural areas.</h3>
+						 	<h3>Gain experience teaching new subjects.</h3>
+			</div>
+			<div class="col-md-4">
+				<h1 style="text-align: center">
+					<span class="fa-stack fa-lg">
+						  <i class="fa fa-circle fa-stack-2x"></i>
+						  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+					</span>
+				<br>Computer Enthusiasts<br></h1><%= link_to 'Share your Love', new_user_registration_path, class: "btn btn-danger btn-lg" %></h1><br>
+						 	<h3>Share your knowledge of technology with underpriviledged students.</h3>
+						 	<h3>Serve and empower your community.</h3>
+			</div>
+			<div class="col-md-4">
+					<h1 style="text-align: center">
+						<span class="fa-stack fa-lg">
+						  <i class="fa fa-circle fa-stack-2x"></i>
+						  <i class="fa fa-child fa-stack-1x fa-inverse"></i>
+						  </span>
+					<br>Schools in need<br></h1><%= link_to 'Request a Volunteer', new_user_registration_path, class: "btn btn-danger btn-lg" %></h1><br>
+						 	<h3>Ask for a volunteer to give a short class or course in any subject</h3>
+						 	<h3>Offer your students classes in real-world knowledge.</h3>
+			</div>
+		</div>
+</div>

@@ -5,7 +5,7 @@
 <% near = School.near([current_user.latitude, current_user.longitude], 20) %>
 <h1>Schools in Need Near You</h1>
 <% if near.empty? %>
-	<h4>Sorry, there are no schools near you yet</h4>
+	<h3>Sorry, there are no schools near you yet</h3>
 <% else %>
 	<% near.each do |school| %>
 		<%= render 'schools/school_show', school: school %>
