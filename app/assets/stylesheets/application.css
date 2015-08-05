@@ -12,12 +12,11 @@
  *
  *
  *= require readable
- *= require_tree .
  *= require stylish-portfolio
+ *= require_tree .
  *= require_self
  */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,700italic);
 
-/*@import 'bootstrap/glyphicons'
-*/
+@import 'bootstrap/glyphicons'
