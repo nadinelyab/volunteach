@@ -5,25 +5,29 @@
 	<% end %>
 <% end %>
 
-<%= form_for @school do |f| %>
-<p>
-	<%= f.label "School Name*" %><br>
-	<%= f.text_field :school_name %>
-</p>
-<p>
-	<%= f.label "Address*" %><br>
-	<%= f.text_field :location%>
-</p>
-<p>
-	<%= f.label "Needs*" %><br>
-	<%= f.text_field :needs %>
-</p>
-<p>
-	<%= f.label :students_age %><br>
-	<%= f.text_field :students_age %>
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
 
-<p>
-	<%= f.submit "Create School", class: "btn btn-dark" %>
-</p>
-<% end %>
+			<%= simple_form_for @school do |f| %>
+			<p>
+				<%= f.input :school_name, placeholder: "The name of your institution" %>
+			</p>
+			<p>
+				<%= f.input :location, label: "Address", placeholder: "Address" %>
+			</p>
+			<p>
+				<%= f.input :needs, placeholder: "Teacher or educational needs" %>
+			</p>
+			<p>
+				<%= f.input :students_age, label: "Students' Age", placeholder: "Students' age range" %>
+			</p>
+
+			<p>
+				<%= f.submit "Create School", class: "btn btn-dark btn-lg" %>
+			</p>
+			<% end %>
+					<%= link_to 'Back', schools_path %>
+		</div>
+	</div>
+</div>

@@ -18,7 +18,7 @@ class SchoolsController < ApplicationController
 	def show
 		@school  = School.find(params[:id])
 		@proposals = @school.proposals
-
+		@receiver = @school.user.name
 		@message = Message.new
 	end	
 

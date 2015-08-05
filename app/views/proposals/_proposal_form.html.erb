@@ -4,28 +4,29 @@
 	<% end %>
 <% end %>
 
-<%= form_for @proposal do |f| %>
-<p>
-	<%= f.label "Topic*" %><br>
-	<%= f.text_field :topic %>
-</p>
-<p>
-	<%= f.label :class_duration %><br>
-	<%= f.text_field :duration %>
-</p>
-<p>
-	<%= f.label :target_age %><br>
-	<%= f.text_field :target_age %>
-</p>
-<p>
-	<%= f.label "Language(s)*" %><br>
-	<%= f.text_field :language %>
-</p>
-<p>
-	<%= f.label "Description*" %><br>
-	<%= f.text_area :description %>
-</p>
-<p>
-	<%= f.submit "Create Proposal", class: "btn btn-dark" %>
-</p>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<%= simple_form_for(@proposal, html: { class: 'form-horizontal' }) do |form| %>
+			<p>
+				<%= form.input :topic, placeholder: "Topic" %>
+			</p>
+			<p>
+				<%= form.input :duration, label: "Class Duration", placeholder: "Class Duration" %>
+			</p>
+			<p>
+				<%= form.input :target_age, placeholder: "Target age group"%>
+			</p>
+			<p>
+				<%= form.input :language, label: "Language(s)" %>
+			</p>
+			<p>
+				<%= form.input :description, :as => :text, :input_html => {:rows => 10} %>
+			</p>
+			<p>
+				<%= form.submit "Create Proposal", class: "btn btn-dark btn-lg" %>
+			</p>
+			<% end %>
+		</div>
+	</div>
+</div>
