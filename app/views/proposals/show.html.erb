@@ -9,16 +9,16 @@
 		<p>Languages: <%= @proposal.language %></p>
 		<hr>
 
-		<h3>Schools where this class has been taught</h3>
+		<h2>Schools where this class has been taught</h2>
 		<% if @proposal.schools == [] %>
-			<p>This class has not been taught at any schools yet.</p>
+			<h3>This class has not been taught at any schools yet.</h3>
 		<% else %> 
 			<% @proposal.schools.each do |school| %>
 				<%= render 'schools/school_show', school: school %>
 			<% end %>
 		<% end %><hr>
 
-		<h4><em> Send a message to the volunteer</em></h4>
+		<i class="fa fa-envelope-o fa-3x"></i><br>
 			<%= form_for ([current_user, @message]) do |f| %>
 
 				<p>
@@ -36,6 +36,7 @@
 				  <%= f.submit "Send Message", class: "btn btn-dark" %>
 				</p>
 			<% end %>
+			<h4><em> Send a message to the volunteer</em></h4>
 
 		
 
