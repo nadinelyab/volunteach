@@ -22,6 +22,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap/glyphicons";
 
+
 form label {
     font-size: 18px;
     color: #222;
