@@ -29,6 +29,9 @@ gem 'devise'
 # bootstrap
 gem 'twitter-bootstrap-rails'
 
+# simple form 
+gem 'simple_form'
+
 # bootstrap glyphicons
 gem 'bootstrap-glyphicons'
 

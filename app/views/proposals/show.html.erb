@@ -1,12 +1,14 @@
 <div class="container">
 	<div class='row'>
-		<h2><%= @proposal.topic.upcase %></h2>
+		<h2><%= @proposal.topic %></h2>
 		<p>Taught by: <%= link_to @proposal.user.name, user_path(@proposal.user) %></p>
+		<div class="well", style="font-size: 20px">
 		<p>Description: <%= @proposal.description %></p>
 		<p>Location: <%= @proposal.user.location %></p>
 		<p>Class Duration: <%= @proposal.duration %></p>
 		<p>Target Age: <%= @proposal.target_age %></p>
 		<p>Languages: <%= @proposal.language %></p>
+		</div>
 		<hr>
 
 		<h2>Schools where this class has been taught</h2>
@@ -22,7 +24,7 @@
 			<%= form_for ([current_user, @message]) do |f| %>
 
 				<p>
-				  <%= f.label "To:" %><br>
+				  <%= f.label "To" %><br>
 				  <%= f.text_field :receiver_id, :value => @receiver %></p>
 				<p>
 				  <%= f.label "Subject" %><br>
