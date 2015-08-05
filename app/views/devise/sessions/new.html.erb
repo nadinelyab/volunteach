@@ -1,26 +1,28 @@
- <div class="container" style="text-align: center"> 
-  <h2>Log in</h2><hr>
+ <div class="container" > 
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.input :email, autofocus: true %>
-    </div><br>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+    <h2 style="text-align: center">Log in</h2><hr>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          
+          <%= f.input :email, autofocus: true %><br>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div><br>
+          <%= f.input :password, autocomplete: "off", wrapper_html: { id: 'password' } %>
 
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%><br>
+
+          <div style="text-align: center">
+            <%= f.submit "Log in", class: "btn btn-dark btn-lg" %>
+          </div>
+        <% end %><br>
+
+        <%= render "devise/shared/links" %>
       </div>
-    <% end -%><br>
-
-    <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-dark" %>
     </div>
-  <% end %><br>
-
-  <%= render "devise/shared/links" %>
 </div>
