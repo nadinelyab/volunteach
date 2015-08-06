@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :schools, :dependent => :delete_all
   has_many :messages
 
-  has_attached_file :photo,
+  has_attached_file :photo, styles: { medium: "300x300#", thumbnail: "60x60#" },
                   :url  => "/assets/users/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
   
