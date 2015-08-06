@@ -30,7 +30,7 @@
           <%= f.input :password_confirmation, autocomplete: "off", wrapper_html: { id: 'password' } %>
         <br>
 
-        <%= f.file_field :photo %>
+        <%= f.input :photo, as: :file %>
 
         <div style="text-align: center">
           <%= f.submit "Sign up", class: "btn btn-dark btn-lg" %><br><br>

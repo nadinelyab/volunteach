@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [:username, :name, :category, :location]
-    devise_parameter_sanitizer.for(:account_update) << [:username, :name, :category, :location]
+    devise_parameter_sanitizer.for(:sign_up) << [:username, :name, :category, :location, :photo]
+    devise_parameter_sanitizer.for(:account_update) << [:username, :name, :category, :location, :photo]
   end
 
   def after_sign_in_path_for(resource)

@@ -8,11 +8,15 @@ class User < ActiveRecord::Base
   has_many :schools, :dependent => :delete_all
   has_many :messages
 
-  has_attached_file :photo,
+  has_attached_file :photo, styles: { medium: "300x300#", thumbnail: "100x100#" },
                   :url  => "/assets/users/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
   
- do_not_validate_attachment_file_type :photo 
+ validates_attachment_content_type :photo, :content_type => /\Aimage/
+  # Validate filename
+  validates_attachment_file_name :photo, :matches => [/png\Z/, /jpe?g\Z/]
+  # Explicitly do not validate
+  do_not_validate_attachment_file_type :photo 
 
   geocoded_by :location
   after_validation :geocode

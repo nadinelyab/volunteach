@@ -10,7 +10,7 @@ Proposal.delete_all
 User.delete_all
 Message.delete_all
 
-volunteer_user = User.create! username: "volunteer", email: "volunteer@user.com", password: "password", password_confirmation: "password", category: "volunteer", name: "Maria", location: "Anchorage", photo: "https://d2jm4qw7a11yde.cloudfront.net/blog/wp-content/uploads/2013/10/Coffee-Cups.jpg"
+volunteer_user = User.create! username: "volunteer", email: "volunteer@user.com", password: "password", password_confirmation: "password", category: "volunteer", name: "Maria", location: "Anchorage"
 
 school_user = User.create! username: "school", email: "school@user.com", password: "password", password_confirmation: "password", category: "school", name: "South Anchorage High School", location: "Anchorage"
 
