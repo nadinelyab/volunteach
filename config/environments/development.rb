@@ -24,13 +24,13 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = 'user/local/bin'
 
-  #S3
+  #production.rb
   config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_credentials => {
-    :bucket => ENV['volunteach'],
-    :access_key_id => ENV['AKIAI6IOYUDTGIGP5H2Q'],
-    :secret_access_key => ENV['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']
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 
