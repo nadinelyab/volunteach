@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   has_many :schools, :dependent => :delete_all
   has_many :messages
 
+  has_attached_file :photo,
+                  :url  => "/assets/users/:id/:style/:basename.:extension",
+                  :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+  
+ do_not_validate_attachment_file_type :photo 
+
   geocoded_by :location
   after_validation :geocode
 end
