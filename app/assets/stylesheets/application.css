@@ -19,9 +19,9 @@
  */
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700,700italic);
-@import "bootstrap";
+/*@import "bootstrap";
 @import "bootstrap-sprockets";
-@import "bootstrap/glyphicons";
+@import "bootstrap/glyphicons";*/
 
 
 form label {
