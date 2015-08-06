@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :messages
 
   has_attached_file :photo, styles: { medium: "300x300#", thumbnail: "100x100#" },
+                  :bucket => 'volunteach',
                   :url  => "/assets/users/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
   

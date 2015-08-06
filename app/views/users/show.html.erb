@@ -1,12 +1,13 @@
 <div class="container">
 	<div class="row text-center">
 
-		<% if @user.category == "volunteer" %>
-			<% if @user.photo? %>
+		<% if @user.photo? %>
 				<%= image_tag @user.photo.url(:medium) %>
 			<% else %>
 				<i class="fa fa-user fa-2x"></i>
 			<% end %>
+
+		<% if @user.category == "volunteer" %>
 	</div>
 	<div class="row text-center">
 			<h1><%= @user.name %> | <%= @user.location %></h1>
@@ -19,7 +20,8 @@
 		<% end %>
 
 		<% if @user.category == "school" %>
-			<h1><i class="fa fa-user fa-2x"></i> <%= @user.name %> | <%= @user.location %></h1>
+			<h1> <%= @user.name %> | <%= @user.location %></h1>
+			</div>
 			<hr>
 			<h2>Schools added by this user:</h2>
 				<% @schools.each do |school| %>

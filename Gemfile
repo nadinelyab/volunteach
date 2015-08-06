@@ -47,6 +47,8 @@ gem 'geocoder'
 # paperclip for images
 gem "paperclip", "~> 4.3"
 
+#S3
+gem 'aws-sdk', '< 2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
