@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20150806081437) do
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -87,7 +89,9 @@ ActiveRecord::Schema.define(version: 20150806081437) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
   add_foreign_key "proposals", "users"
   add_foreign_key "schools", "users"
