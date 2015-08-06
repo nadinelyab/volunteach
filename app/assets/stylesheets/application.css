@@ -32,3 +32,6 @@ form input, form textarea, form select {
     margin-left: 10px;
 }
 
+.bigger-txt{
+	font-size: 20px;
+}
