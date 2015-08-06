@@ -40,6 +40,8 @@
       <%= f.password_field :current_password, autocomplete: "off" %>
     </div><br>
 
+    <%= f.file_field :photo %>
+
     <div class="actions">
       <%= f.submit "Update", class: "btn btn-dark" %>
     </div>

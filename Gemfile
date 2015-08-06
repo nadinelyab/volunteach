@@ -44,6 +44,9 @@ gem 'textacular'
 #gem for geocoder
 gem 'geocoder'
 
+# paperclip for images
+gem "paperclip", "~> 4.3"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
