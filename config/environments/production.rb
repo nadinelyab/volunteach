@@ -14,6 +14,16 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  #S3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['volunteach'],
+    :access_key_id => ENV['AKIAI6IOYUDTGIGP5H2Q'],
+    :secret_access_key => ENV['JOPB5lL8yfJ8+dwMJIx1zrWVKP755Zq3WOZ00hfo']
+    }
+  }
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like

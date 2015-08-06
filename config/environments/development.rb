@@ -24,6 +24,16 @@ Rails.application.configure do
 
   Paperclip.options[:command_path] = 'user/local/bin'
 
+  #S3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['volunteach'],
+    :access_key_id => ENV['AKIAI6IOYUDTGIGP5H2Q'],
+    :secret_access_key => ENV['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']
+    }
+  }
+
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
