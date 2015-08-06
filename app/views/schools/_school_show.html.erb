@@ -1,13 +1,17 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-1">
-			<i class="fa fa-bus fa-4x"></i>
+			<% if school.user.photo? %>
+				<%= image_tag school.user.photo.url(:thumbnail) %>
+			<% else %>
+				<i class="fa fa-bus fa-4x"></i>
+			<% end %>
 		</div>
 
 
 
 
-		<div class="col-md-11">
+		<div class="col-md-10", style="margin-left:30px">
 			<div class="panel panel-default">
 				<div class="panel body">
 					<span class="pull-right", style="margin-right: 5px"><%= link_to 'View', school_path(school), class: "btn btn-dark" %></span>

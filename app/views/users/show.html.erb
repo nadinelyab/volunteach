@@ -1,9 +1,17 @@
 <div class="container">
-	<div class="row">
+	<div class="row text-center">
 
 		<% if @user.category == "volunteer" %>
-			<h1><i class="fa fa-user fa-2x"></i> <%= @user.name %> | <%= @user.location %></h1>
+			<% if @user.photo? %>
+				<%= image_tag @user.photo.url(:medium) %>
+			<% else %>
+				<i class="fa fa-user fa-2x"></i>
+			<% end %>
+	</div>
+	<div class="row text-center">
+			<h1><%= @user.name %> | <%= @user.location %></h1>
 			<hr>
+	</div>
 			<h2>Class Proposals</h2>
 				<% @proposals.each do |proposal| %>
 					<%= render 'proposals/proposal_show', proposal: proposal %>

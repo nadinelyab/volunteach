@@ -1,14 +1,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-1">
-			<%= image_tag proposal.user.photo.url %>
+			<% if proposal.user.photo? %>
+				<%= image_tag proposal.user.photo.url(:thumbnail) %>
+			<% else %>
+				<i class="fa fa-book fa-4x"></i>
+			<% end %>
 		</div>
 
-		<div class="col-md-11">
+		<div class="col-md-10", style="margin-left:30px">
 
 			<div class="panel panel-default">
 				<div class="panel body">
-					<span class="pull-right", style="margin-right: 5px"><%= link_to 'View', proposal_path(proposal), class: "btn btn-dark" %></span>
+					<span class="pull-right", style="margin-right: 5px;"><%= link_to 'View', proposal_path(proposal), class: "btn btn-dark" %></span>
 					<div class="container", style="font-size: 18px">
 						<h3><%= proposal.topic %></h3>
 

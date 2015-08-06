@@ -80,12 +80,12 @@ ActiveRecord::Schema.define(version: 20150806081437) do
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

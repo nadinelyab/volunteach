@@ -1,6 +1,15 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-4", style="padding-top: 50px">
+			<div style="text-align: center">
+				<% if @school.user.photo? %>
+					<%= image_tag @school.user.photo.url(:medium) %>
+				<% else %>
+					<i class="fa fa-bus fa-4x"></i>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-5">
 			<h2><%= @school.school_name %></h2>
 			<h3>Needs: <%= @school.needs %></h3>
 			<p>Students' Age: <%= @school.students_age %></p>
@@ -13,7 +22,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<% if current_user == @school.user %>
-				<%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
+				<br><%= link_to 'Edit', edit_school_path(@school), class: "btn btn-dark" %>
 				<%= link_to 'Delete', @school, :method => :delete, :confirm => "Are you sure?", class: "btn btn-dark" %>
 			<% end %>
 		</div>
@@ -28,8 +37,10 @@
 			<% end %>
 		<% end %><hr>
 	<div class="row">
-		<div class="col-md-12">
-			<i class="fa fa-envelope-o fa-3x"></i><br>
+			<div class="col-md-1">
+				<i class="fa fa-envelope-o fa-4x"></i><br>
+			</div>
+			<div class="col-md-10">
 			<%= form_for ([current_user, @message]) do |f| %>
 
 					<p>
