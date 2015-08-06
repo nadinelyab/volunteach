@@ -21,4 +21,6 @@ class User < ActiveRecord::Base
   geocoded_by :location
   after_validation :geocode
 
+  validates :username, :name, :location, :photo_file_name, :category, presence: true
+
 end

@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *
+ *= require slider
  *= require readable
  *= require stylish-portfolio
  *= require_tree .
@@ -33,7 +34,11 @@ form input, form textarea, form select {
 }
 
 .bigger-txt{
-	font-size: 20px;
+	font-size: 30px;
+}
+
+#instr{
+	background-color: #d9534f;
 }
 /*!
  * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
