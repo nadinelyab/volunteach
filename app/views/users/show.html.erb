@@ -20,7 +20,8 @@
 		<% end %>
 
 		<% if @user.category == "school" %>
-			<h1><i class="fa fa-user fa-2x"></i> <%= @user.name %> | <%= @user.location %></h1>
+			<h1> <%= @user.name %> | <%= @user.location %></h1>
+			</div>
 			<hr>
 			<h2>Schools added by this user:</h2>
 				<% @schools.each do |school| %>
