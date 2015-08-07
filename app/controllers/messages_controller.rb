@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
 
 	def show
 		@message  = Message.find(params[:id])
+		@message.read = true
+		@message.save!
 		@new_message = Message.new
 
 		@receiver = User.find(@message.receiver_id)

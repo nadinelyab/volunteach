@@ -1,5 +1,5 @@
-<div class="panel panel-default">
-	<div class="panel body">
+<div class="panel panel-default" <% if !message.read %> style = "background-color: #d3d3d3" <% end %>>
+	<div class="panel body" <% if !message.read %> style = "background-color: #d3d3d3" <% end %>>
 		<div class="container">
 			<span style="float: right"><%= link_to 'View', user_message_path(message.sender_id, message), class: "btn btn-dark" %></span>
 			<h4>To: <%= User.find(message.receiver_id).username %></h4>
