@@ -17,7 +17,7 @@
 			</div>
 			<div class="col-sm-4 col-md-3 col-md-offset-5">
 				<%= link_to 'Log In', new_user_session_path, class: "btn btn-dark btn-xlarge" %><br>
-				<%= link_to 'Getting Started', new_user_registration_path, class: "btn btn-dark btn-xlarge" %>
+				<a class="btn btn-dark btn-xlarge" href="#getting-started"> Getting Started</a>
 			</div>
 		</div>
 	</div>
@@ -26,28 +26,29 @@
 
 
 
-<div class="container">
-		<div class="row", style="text-align: center">
-			<div class="col-sm-4 col-md-3">
+<div id="getting-started" class="services">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-sm-4 col-md-4">
 					<h2 style="text-align: center">
 						<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-book fa-stack-1x fa-inverse"></i>
 						  </span>
 						 <br>Teachers<br></h2><%= link_to 'Teach a Class', new_user_registration_path, class: "btn btn-danger btn-lg" %><br>
-						 	<h3 style="text-align: left;">Share your abilities with schools in rural areas.</h3>
-						 	<h3 style="text-align: left;">Gain experience teaching new subjects.</h3>
+						 	<h3>Share your abilities with schools in rural areas.</h3>
+						 	<h3>Gain experience teaching new subjects.</h3>
 			</div>
 
-			<div class="col-sm-4 col-md-5">
+			<div class="col-sm-4 col-md-4">
 				<h2 style="text-align: center">
 					<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
 					</span>
 				<br>Computer Enthusiasts<br></h2><%= link_to 'Share your Love', new_user_registration_path, class: "btn btn-danger btn-lg" %><br>
-						 	<h3 style="text-align: left;">Share your knowledge of technology with underpriviledged students.</h3>
-						 	<h3 style="text-align: left;">Serve and empower your community.</h3>
+						 	<h3>Share your knowledge of technology with underpriviledged students.</h3>
+						 	<h3>Serve and empower your community.</h3>
 			</div>
 			<div class="col-sm-4 col-md-4">
 					<h2 style="text-align: center">
@@ -56,8 +57,9 @@
 						  <i class="fa fa-child fa-stack-1x fa-inverse"></i>
 						  </span>
 					<br>Schools in need<br></h2><%= link_to 'Request a Volunteer', new_user_registration_path, class: "btn btn-danger btn-lg" %><br>
-						 	<h3 style="text-align: left;">Ask for a volunteer to give a short class or course in any subject</h3>
-						 	<h3 style="text-align: left;">Offer your students classes in real-world knowledge.</h3>
+						 	<h3>Ask for a volunteer to give a short class or course in any subject</h3>
+						 	<h3>Offer your students classes in real-world knowledge.</h3>
+		</div>
 			</div>
 		</div>
 </div>
@@ -104,14 +106,14 @@
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+	      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="padding: 200px">
+	        <span class="fa fa-arrow-left fa-2x"></span>
+	        <span class="sr-only">Previous</span>
+	      </a>
+	      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="padding: 200px">
+	        <span class="fa fa-arrow-right fa-2x"></span>
+	        <span class="sr-only">Next</span>
+	      </a>
     </div><!-- /.carousel -->
 
 
@@ -124,7 +126,10 @@
 			<div class="col-md-12">
 			<h1>Why VolunTeach?</h1><br><br>
 			<%= image_tag "info_educ.png", size: "1000x1000", style: "opacity: 0.7;" %>
-			<a href= "http://www.teach.com" class="btn btn-danger btn-xlarge" style="margin-top: 40px">Learn More about Teaching!</a>
+			<div style="margin-top: 40px">
+			<a href= "http://www.teach.com" class="btn btn-danger btn-xlarge">Learn More about Teaching!</a>
+			<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-success btn-xlarge" %><br>
+			</div>
 			</div>
 		</div>
 	</div>
